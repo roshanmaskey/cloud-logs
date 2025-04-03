@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudlogs"
+version = "0.1"
+requires-python = ">=3.8, <3.13"
+description = "cloudlogs is an experimental Python tool for processing Cloud provider logs and make Timesketch compatible."
+license = {file= "LICENSE"}
+authors = [{name = "roshan maskey", email = "roshanmaskey@gmail.com"}]
+maintainers = [{name = "roshan maskey", email = "roshanmaskey@gmail.com"}]
+dependencies = [
+    "orjson==3.10.16",
+]
+readme = {file = "README.md", content-type="text/markdown"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["cloud", "logs", "timesketch"]
+
+[project.optional-dependencies]
+dev = [
+    "black==24.4.0", # Pinned version
+    "pylint==3.0.3", # Pinned version
+]
+
+[project.scripts]
+cloudlogs = "tools/cloudlogs:Main"
+
+[tool.setuptools]
+packages = ["cloudlogs"]
+
+[project.urls]
+Homepage = "https://github.com/openrelik/openrelik-worker-cloud-logs"
+Documentation = "https://github.com/openrelik/openrelik-worker-cloud-logs/tree/main/docs"
+Repository = "https://github.com/openrelik/openrelik-worker-cloud-logs"
+Bugs = "https://github.com/openrelik/openrelik-worker-cloud-logs/issues"
